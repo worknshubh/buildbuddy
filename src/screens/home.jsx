@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import PrimaryBtn from "../components/button";
 import Particles from "../components/particles";
 import SplitText from "../components/spilltext";
@@ -7,7 +8,7 @@ function HomePage() {
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
-
+  const navigate = useNavigate();
   return (
     <>
       <div
@@ -51,8 +52,16 @@ function HomePage() {
 
           <div className="absolute z-1 top-125 w-[15%]">
             <div className="flex flex-row w-[100%] justify-around">
-              <PrimaryBtn btnname="Sign Up" colour="#EFA61F" />
-              <PrimaryBtn btnname="Download" colour="#3a3a3a" />
+              <div
+                onClick={() => {
+                  navigate("/register");
+                }}
+              >
+                <PrimaryBtn btnname="Sign Up" colour="#EFA61F" />
+              </div>
+              <div>
+                <PrimaryBtn btnname="Download" colour="#3a3a3a" />
+              </div>
             </div>
           </div>
         </div>
@@ -184,10 +193,26 @@ function HomePage() {
           </div>
 
           <div className="flex flex-row mt-3">
-            <img src="public/images/fb.png" alt="" className="w-[30px] mx-2" />
-            <img src="public/images/ins.png" alt="" className="w-[30px] mx-2" />
-            <img src="public/images/x.png" alt="" className="w-[30px] mx-2" />
-            <img src="public/images/ln.png" alt="" className="w-[30px] mx-2" />
+            <img
+              src="public/images/fb.png"
+              alt=""
+              className="w-[30px] mx-2  hover:brightness-200"
+            />
+            <img
+              src="public/images/ins.png"
+              alt=""
+              className="w-[30px] mx-2 hover:brightness-200"
+            />
+            <img
+              src="public/images/x.png"
+              alt=""
+              className="w-[30px] mx-2 hover:brightness-200"
+            />
+            <img
+              src="public/images/ln.png"
+              alt=""
+              className="w-[30px] mx-2 hover:brightness-200"
+            />
           </div>
           <div className="flex flex-row justify-end">
             <div className="flex flex-col mx-8">

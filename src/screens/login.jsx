@@ -1,11 +1,18 @@
 import "../global.css";
 import TextType from "../components/typingtext";
 import PrimaryBtn from "../components/button";
+import { useNavigate } from "react-router-dom";
 function LoginPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-[#1a1a1a] h-lvh flex flex-col">
-        <div className="flex flex-row justify-center pt-20">
+        <div
+          className="flex flex-row justify-center pt-20 cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <h2 className="text-4xl text-white">Build</h2>
           <h2 className="text-4xl text-[#EFA61F]">Buddy</h2>
         </div>
